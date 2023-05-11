@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>andar</title>
+  </head>
+  <body>
+    <form action="join.html" method="get"></form>
+    <h1>andar</h1>
+    <h2>회원가입</h2>
+    <form action="hello.html" method="get"></form>
+    <div>아이디 <input type="text" name="id" placeholder="(영문소문자/숫자,4~16자)" /></div>
+    <div>비밀번호 <input type="text" name="password" placeholder="(영문 대소문자/숫자/특수문자 중 2가지 이상 조합,8자~16자)" /></div>
+    <div>비밀번호 확인 <input type="text" name="password" /></div>
+    <div>이름 <input type="text" name="name" /></div>
+    <div>주소 <input type="text" name="주소" /></div>
+    <div>. ...<input type="text" placeholder="기본주소" /></div>
+    <div>... .<input type="text" /></div>
+    <div>
+      휴대전화<select name="mobile[]" id="mobile">
+        <option value="010">010</option>
+        <option value="011">011</option>
+        <option value="016">016</option>
+        <option value="017">017</option>
+      </select>
+      -
+      <input type="text" name="mobile[]" id="mobile2" />
+      -
+      <input type="text" name="mobile[]" id="mobile3" />
+    </div>
+    <div>이메일<input type="text" name="email" /></div>
+    <h3>추가정보</h3>
+    <div>
+      <a>성별</a>
+      <spen> <input type="radio" id="male" name="gender" value="male" /><label for="male">남자</label></spen>
+      <spen> <input type="radio" id="female" name="gender" value="female" checked /><label for="female">여자</label></spen>
+    </div>
+    <div>생년월일 <input type="text" name="year" />년 <input type="text" name="month" />월 <input type="text" name="day" />일</div>
+    <h4>전체동의</h4>
+    <spen>
+      <input type="checkbox" id="male" name="gender" value="male" /><label for="male"
+        ><strong>이용약관 및 개인정보수집 및 이용,쇼핑정보 수신(선택)에 모두 동의합니다.</strong></label
+      ></spen
+    >
+    <div>
+      <spen> <input type="checkbox" id="male" name="gender" value="male" /><label for="male">[필수]이용약관동의</label></spen>
+    </div>
+    <div>
+      <spen> <input type="checkbox" id="male" name="gender" value="male" /><label for="male">[필수]개인정보 수집 및 이용 동의</label></spen>
+    </div>
+    <div>
+      <spen>
+        <input type="checkbox" id="male" name="gender" value="male" /><label for="male">[선택]SM(문자,카카오톡 등) 수신을 동의합니까?</label></spen
+      >
+      <spen> <input type="checkbox" id="male" name="gender" value="male" /><label for="male">[선택]이메일 수신을 동의하십니까?</label></spen>
+    </div>
+    <div><button>취소</button> <button>회원가입</button></div>
+  </body>
+</html>
