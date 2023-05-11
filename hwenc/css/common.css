@@ -1,0 +1,12 @@
+body {
+  font-size: 16px;
+  color: #4b4646;
+  font-family: "Raleway", "Noto Sans KR";
+  font-weight: 400;
+  /* 몇 몇 태그들은 부보믜 속성을 물려받지 않는 것돌도 있다. */
+  /* 한글폰트보다 영문폰트를 우선으로 두자 */
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
