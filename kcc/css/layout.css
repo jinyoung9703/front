@@ -9,7 +9,7 @@
   z-index: 99;
   /* overflow: hidden 100px밖에 자식들을 안보이게 막는다*/
   /* left: 100px  
-  top: 300px; */
+    top: 300px; */
   transition: all 0.5s ease;
 }
 .header:after {
@@ -51,8 +51,8 @@
   font-size: 20px;
   font-weight: 500;
   /* display: block;
-  height: 100px;
-  line-height: 100px; */
+    height: 100px;
+    line-height: 100px; */
   height: 100px;
   /* width: 200px; */
   display: flex;
@@ -63,11 +63,11 @@
   transition: all 0.25s ease;
   /* outline: 1px solid #ff0000; */
   /* 높이 만큼의 line-height: 를주면 중간에온다;
-  margin으로도 padding과 같은 효과를 주는데 영역이작아짐 */
+    margin으로도 padding과 같은 효과를 주는데 영역이작아짐 */
 }
 /* 사용자가 마우스를 올리면 어떡할거냐 */
 .list > li:hover .depth01 {
-  color: #f60;
+  color: rgb(10, 6, 235);
 }
 
 .list .depth02 {
