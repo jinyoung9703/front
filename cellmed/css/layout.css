@@ -1,7 +1,7 @@
 /* position / flex */
-/* fixed 부모기준이 아니고 바디기준이다 */
+
 .header {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100px;
   background-color: rgba(255, 255, 255, 0);
@@ -9,10 +9,9 @@
   z-index: 99;
   /* overflow: hidden 100px밖에 자식들을 안보이게 막는다*/
   /* left: 100px  
-  top: 300px; */
+    top: 300px; */
   transition: all 0.5s ease;
 }
-/* pseudo element 뒤에 만들거면 에프터*/
 .header:after {
   content: "";
   display: block;
@@ -21,7 +20,6 @@
   background-color: #ccc;
   position: absolute;
   top: 100px;
-  /* z-index: -1; */
 }
 
 .header:hover {
@@ -38,8 +36,8 @@
   display: flex;
   align-items: center;
   /* outline: 1px solid #f00; */
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .header .logo a .white {
@@ -69,51 +67,23 @@
   font-size: 20px;
   font-weight: 500;
   /* display: block;
-  height: 100px;
-  line-height: 100px; */
+    height: 100px;
+    line-height: 100px; */
   height: 100px;
   /* width: 200px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 50px;
+  padding-left: 25px;
   padding-right: 50px;
-  border-bottom: 2px solid transparent;
   transition: all 0.25s ease;
   /* outline: 1px solid #ff0000; */
   /* 높이 만큼의 line-height: 를주면 중간에온다;
-  margin으로도 padding과 같은 효과를 주는데 영역이작아짐 */
-  /* transparent 실선을 부드럽게 */
+    margin으로도 padding과 같은 효과를 주는데 영역이작아짐 */
 }
 /* 사용자가 마우스를 올리면 어떡할거냐 */
-/* 실선을 만들어줌border */
-
-.list > li .depth01 {
-  position: relative;
-}
-.list > li .depth01:after {
-  /* content: "내용을 넣어야지만 화면에 보여진다."; */
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #f60;
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  transform: scaleX(0);
-  transition: all 0.25s ease;
-  z-index: 1;
-}
-/* z-index는 포지션과 무조건 같이 사용해야한다 */
-
 .list > li:hover .depth01 {
-  color: #f60;
-  /* border-bottom: 2px solid #f60; */
-}
-
-.list > li:hover .depth01:after {
-  transform: scaleX(1);
+  color: rgb(0, 0, 0);
 }
 
 .list .depth02 {
@@ -124,25 +94,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   transition: all 0.25s ease;
 }
 .list .depth02 li a:hover {
-  color: #f60;
-}
-.popup {
-  position: fixed;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  left: 100px;
-  top: 100px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-}
-.popup .content {
-  width: 400px;
-  height: 400px;
-  background-color: #12c9f2;
-  margin-bottom: 10px;
+  color: rgb(0, 0, 0);
 }
