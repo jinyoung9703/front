@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
+    <style style="overflow-x: hidden">
       body {
-        min-height: 3000px;
+        min-height: 4000px;
+        overflow: auto;
       }
       .parent {
         width: 1200px;
-        height: 800px;
+        height: 2900px;
         border: 1px solid #f00;
         margin-top: 300px;
         margin-left: 300px;
@@ -20,17 +21,18 @@
       /* 부모가 없으면 자기의 부모기준으로 이동하고 부모가 포지션을 가지면 부모를따른다 */
       /* position absolute 부모기준을따른다 */
       .son {
-        width: 400px;
-        height: 300px;
+        width: 1200px;
+        height: 1200px;
         border: 1px solid #000;
       }
       .inner-son {
-        width: 200px;
+        width: 1200px;
         height: 100px;
         border: 1px solid #000;
       }
       .red {
-        background-color: #f00;
+        background-color: rgb(229, 255, 0);
+
         /* position: absolute;
         z-index: 1;
         right: 0;
@@ -42,16 +44,17 @@
         /* position: absolute; */
         z-index: 2;
         top: 200px;
-        position: relative;
+        position: sticky;
         left: 100px;
         top: 100px;
       }
+
       /* sticky 기준이 scroll 기준으로 움직인다. 이때 부모는 바드시 높이를 가져야한다.
       그리고 부모요소에 overflow가 들어가 있으면 안된다. */
       /* fixed는 무조건 바디 고정 */
       .green {
         background-color: #0f0;
-        /* position: fixed; */
+        position: sticky;
         left: 0;
         top: 0;
         z-index: 3;
