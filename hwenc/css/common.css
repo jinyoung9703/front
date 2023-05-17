@@ -2,11 +2,10 @@
 body {
   font-size: 16px;
   color: #111;
-  font-family: "Raleway", "Noto Sans KR";
+  font-family: "Raleway", "Noto Sans KR", "돋움";
   font-weight: 400;
   min-height: 4000px;
-  /* 몇 몇 태그들은 부보믜 속성을 물려받지 않는 것돌도 있다. */
-  /* 한글폰트보다 영문폰트를 우선으로 두자 */
+  /* 몇 몇 태그들은 부모의 속성을 물려받지 않는 것들도 있다. */
 }
 
 a {
@@ -16,13 +15,9 @@ a {
 
 .container {
   width: 1200px;
-  /* margin-left: auto;
-    margin-right: auto; */
   margin: 0 auto;
-  /* outline: 1px solid #f00; */
 }
 
-/* 가운데 정렬하고 싶은 컨덴츠는 컨테이너로 가운데 정렬할 수 있다. */
 h2 {
   font-size: 36px;
   font-weight: 700;
@@ -38,6 +33,6 @@ p {
   line-height: 1.5;
 }
 
-.point color {
+.point-color {
   color: #f60;
 }
