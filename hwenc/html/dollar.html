@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label> <span>금액</span> <input type="text" placeholder="금액을 입력해주세요." class="money" id="money" /></label>
+    <button class="btn-calc">계산하기</button>
+    <button class="btn-reset">초기화</button>
+    <div class="result"></div>
+  </body>
+  <script>
+    const money = document.querySelector("#money");
+    const btnCalc = document.querySelector(".btn-calc");
+    const btnReset = document.querySelector(".btn-reset");
+    const result = document.querySelector(".result");
+
+    btnCalc.addEventListener("click", function () {
+      let moneyValue = money.value;
+
+      const dollar = (moneyValue / 1338.5).toFixed(2);
+      result.textContent = `${dollar}  달러 입니다`;
+    });
+
+    btnReset.addEventListener("click", function () {
+      money.value = "";
+      result.textContent = "";
+    });
+  </script>
+</html>
