@@ -1,6 +1,7 @@
-$main-color: #f60;
-/* position / flex */
-/* fixed 부모기준이 아니고 바디기준이다 */
+@import "vars";
+
+/*  이거는 주석입니다. */
+// 이거는 compile되지 않습니다.
 .header {
   position: fixed;
   width: 100%;
@@ -38,7 +39,6 @@ $main-color: #f60;
     height: 100px;
     display: flex;
     align-items: center;
-    /* outline: 1px solid #f00; */
     padding-left: 50px;
     padding-right: 50px;
     a {
@@ -53,7 +53,6 @@ $main-color: #f60;
     }
   }
 }
-//&는 자기자신
 
 .gnb {
   .list {
@@ -71,7 +70,6 @@ $main-color: #f60;
         align-items: center;
         padding-left: 50px;
         padding-right: 50px;
-        border-bottom: 2px solid transparent;
         transition: all 0.25s ease;
         &:after {
           content: "";
@@ -111,7 +109,6 @@ $main-color: #f60;
 }
 
 .popup {
-  /* 끝나는 표현 */
   display: none;
   position: fixed;
   background-color: #fff;
@@ -120,7 +117,7 @@ $main-color: #f60;
   left: 100px;
   top: 100px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-  .popup .content {
+  .content {
     width: 400px;
     height: 400px;
     background-color: #12c9f2;

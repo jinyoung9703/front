@@ -1,43 +1,30 @@
-@charset "UTF-8";
 body {
   font-size: 16px;
   color: #111;
   font-family: "Raleway", "Noto Sans KR";
   font-weight: 400;
-  min-height: 4000px;
+  min-height: 2000px;
   /* 몇 몇 태그들은 부보믜 속성을 물려받지 않는 것돌도 있다. */
   /* 한글폰트보다 영문폰트를 우선으로 두자 */
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 .container {
   width: 1200px;
   /* margin-left: auto;
-    margin-right: auto; */
+  margin-right: auto; */
   margin: 0 auto;
   /* outline: 1px solid #f00; */
 }
-
 /* 가운데 정렬하고 싶은 컨덴츠는 컨테이너로 가운데 정렬할 수 있다. */
 h2 {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 50px;
 }
-
 strong {
   font-weight: 700;
   /* 100/300/400/500/700/900 */
-}
-
-p {
-  line-height: 1.5;
-}
-
-.point color {
-  color: #f60;
 }
