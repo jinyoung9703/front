@@ -1,10 +1,55 @@
 @import "mixins";
 @import "vars";
 .main {
-  &-visual video {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
+  &-visual {
+    video {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+    .mask {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      .list {
+        li {
+          .img {
+            height: 100vh;
+          }
+          .txt {
+            position: absolute;
+            top: 60%;
+            left: 200px;
+            line-height: 1.5;
+            color: #fff;
+            .main {
+              font-size: $h2;
+              font-weight: 700;
+              line-height: 1.2;
+              &::after {
+                content: block;
+                width: 100%;
+                height: 3px;
+                background-color: #fff;
+                margin: 20px 0;
+              }
+            }
+            .sub {
+              font-size: $h4;
+            }
+          }
+          @for $i from 1 through 5 {
+            // 보간(interpolation)
+            &.visual0#{$i} .img {
+              background-image: url("../images/layout/visual0#{$i}.jpg");
+            }
+          }
+        }
+      }
+    }
   }
 }
 .business {
@@ -242,7 +287,103 @@
       }
     }
   }
+  .more {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    &::after {
+      font-family: "Material Icons";
+      content: "\e5cc";
+      display: block;
+    }
+  }
 }
+
+.social {
+  overflow: hidden;
+  .list {
+    li {
+      a {
+        .img-box {
+          position: relative;
+          img {
+            width: 100%;
+          }
+          .icon {
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            border-radius: 100px;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            &.blog {
+              background-image: url(../images/layout/social_blog.png);
+            }
+            &.youtube {
+              background-image: url(../images/layout/social_youtube.png);
+            }
+          }
+        }
+        h3 {
+          font-size: 18px;
+          line-height: 1.25;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .control-box {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin: 30px;
+
+    .btns {
+      display: flex;
+      justify-content: end;
+      margin-left: 20px;
+
+      button {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 100px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+      }
+    }
+    .pagination {
+      position: relative;
+      flex-grow: 1;
+      .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+        background-color: $main-color;
+      }
+
+      //width: 900px;
+    }
+  }
+}
+.more {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  display: flex;
+  &::after {
+    font-family: "Material Icons";
+    content: "\e5cc";
+    display: block;
+  }
+}
+
 .btn {
   width: 150px;
   height: 70px;

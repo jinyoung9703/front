@@ -83,5 +83,25 @@ gnbList.forEach(function (item, idx) {
 //   });
 // });
 
+const mainSwiper = new Swiper(".main-visual .mask", {
+  speed: 600,
+  loop: true,
+});
+
 //const fruits = ["apple", "melon", "peach"];
-const swiper = new Swiper(".social .mask", {});
+const swiper = new Swiper(".social .mask", {
+  speed: 600,
+  slidesPerView: 4,
+  spaceBetween: 25,
+  loop: true,
+  // loopedslides: 10,
+  navigation: {
+    nextEl: ".social .btns .btn-next",
+    prevEl: ".social .btns .btn-prev",
+  },
+  pagination: {
+    el: ".social .pagination .inner",
+    type: "progressbar",
+  },
+  //centeredSlides:true
+});

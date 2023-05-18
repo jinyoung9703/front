@@ -4,6 +4,54 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+.main-visual .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.main-visual .mask .list li .img {
+  height: 100vh;
+}
+.main-visual .mask .list li .txt {
+  position: absolute;
+  top: 60%;
+  left: 200px;
+  line-height: 1.5;
+  color: #fff;
+}
+.main-visual .mask .list li .txt .main {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.main-visual .mask .list li .txt .main::after {
+  content: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  margin: 20px 0;
+}
+.main-visual .mask .list li .txt .sub {
+  font-size: 20px;
+}
+.main-visual .mask .list li.visual01 .img {
+  background-image: url("../images/layout/visual01.jpg");
+}
+.main-visual .mask .list li.visual02 .img {
+  background-image: url("../images/layout/visual02.jpg");
+}
+.main-visual .mask .list li.visual03 .img {
+  background-image: url("../images/layout/visual03.jpg");
+}
+.main-visual .mask .list li.visual04 .img {
+  background-image: url("../images/layout/visual04.jpg");
+}
+.main-visual .mask .list li.visual05 .img {
+  background-image: url("../images/layout/visual05.jpg");
+}
 
 .business {
   padding-bottom: 30px;
@@ -224,6 +272,92 @@
   font-size: 20px;
   margin: 20px 0;
   line-height: 1.25;
+}
+.news-room .more {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  display: flex;
+  align-items: center;
+}
+.news-room .more::after {
+  font-family: "Material Icons";
+  content: "\e5cc";
+  display: block;
+}
+
+.social {
+  overflow: hidden;
+}
+.social .list li a .img-box {
+  position: relative;
+}
+.social .list li a .img-box img {
+  width: 100%;
+}
+.social .list li a .img-box .icon {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 100px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.social .list li a .img-box .icon.blog {
+  background-image: url(../images/layout/social_blog.png);
+}
+.social .list li a .img-box .icon.youtube {
+  background-image: url(../images/layout/social_youtube.png);
+}
+.social .list li a h3 {
+  font-size: 18px;
+  line-height: 1.25;
+  margin-top: 20px;
+}
+.social .control-box {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin: 30px;
+}
+.social .control-box .btns {
+  display: flex;
+  justify-content: end;
+  margin-left: 20px;
+}
+.social .control-box .btns button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.social .control-box .pagination {
+  position: relative;
+  flex-grow: 1;
+}
+.social .control-box .pagination .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: #f60;
+}
+
+.more {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  display: flex;
+}
+.more::after {
+  font-family: "Material Icons";
+  content: "\e5cc";
+  display: block;
 }
 
 .btn {
