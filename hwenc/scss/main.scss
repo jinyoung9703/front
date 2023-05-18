@@ -57,16 +57,18 @@
         justify-content: center;
         align-items: center;
         z-index: 3;
+        background-color: $main-color;
+        border-radius: 100px;
         .pagination {
           width: auto;
           color: #fff;
-          font-size: $h2;
+          font-size: $h3;
           font-family: "Noto Sans KR";
           padding: 0 20px;
         }
         button {
           color: #fff;
-          background-color: $main-color;
+          background-color: transparent;
           border: none;
           border-radius: 100px;
           width: 70px;
