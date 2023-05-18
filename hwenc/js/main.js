@@ -86,6 +86,16 @@ gnbList.forEach(function (item, idx) {
 const mainSwiper = new Swiper(".main-visual .mask", {
   speed: 600,
   loop: true,
+  //effect: "cube",
+  effect: "fade",
+  navigation: {
+    nextEl: ".main-visual .btns .btn-next",
+    prevEl: ".main-visual .btns .btn-prev",
+  },
+  pagination: {
+    el: ".main-visual .pagination",
+    type: "fraction",
+  },
 });
 
 //const fruits = ["apple", "melon", "peach"];

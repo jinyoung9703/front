@@ -29,7 +29,7 @@
               font-size: $h2;
               font-weight: 700;
               line-height: 1.2;
-              &::after {
+              &:after {
                 content: block;
                 width: 100%;
                 height: 3px;
@@ -47,6 +47,33 @@
               background-image: url("../images/layout/visual0#{$i}.jpg");
             }
           }
+        }
+      }
+      .btns {
+        position: absolute;
+        left: 200px;
+        bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+        .pagination {
+          width: auto;
+          color: #fff;
+          font-size: $h2;
+          font-family: "Noto Sans KR";
+          padding: 0 20px;
+        }
+        button {
+          color: #fff;
+          background-color: $main-color;
+          border: none;
+          border-radius: 100px;
+          width: 70px;
+          height: 70px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
