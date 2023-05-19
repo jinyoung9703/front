@@ -1,4 +1,4 @@
-const gnbList = document.querySelectorAll(".gnb .list > li");
+const gnbList = document.querySelectorAll(".gnb .list ");
 const header = document.querySelector(".header");
 gnbList.forEach((item, idx) => {
   item.addEventListener("mouseenter", () => {
