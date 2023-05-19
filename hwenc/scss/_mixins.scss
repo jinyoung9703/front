@@ -8,3 +8,19 @@
   $shadow: unquote($shadow);
   text-shadow: $shadow;
 }
+
+@mixin icon($code) {
+  font-family: "Material Icons";
+  content: $code;
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin cover-background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
