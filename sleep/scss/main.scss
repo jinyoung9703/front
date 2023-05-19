@@ -1,7 +1,66 @@
+@import "vars";
 .main-visual {
   video {
     width: 100%;
     height: 100vh;
     object-fit: cover;
+  }
+  .txt {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100px;
+    h2 {
+      font-size: $h1;
+    }
+    // p {
+    //   // writing-mode: vertical-rl;
+    // }
+  }
+  .scroll {
+    position: absolute;
+    right: 200px;
+    bottom: 0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+      writing-mode: vertical-rl;
+      margin-bottom: 20px;
+      //text-orientation: upright;
+    }
+    .line {
+      height: 150px;
+      width: 1px;
+      background-color: rgba(255, 255, 255, 0.2);
+      display: block;
+      position: relative;
+      overflow: hidden;
+      &:after {
+        content: "";
+        display: block;
+        height: 20px;
+        width: 1px;
+        background-color: rgba(255, 255, 255, 1);
+        position: absolute;
+        top: 0;
+        animation: scroll 2s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    top: -20px;
+  }
+  //   50% {
+  //     height: 50px;
+  //     background-color: #f00;
+  //   }
+  100% {
+    top: 100%;
   }
 }

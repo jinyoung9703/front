@@ -18,7 +18,9 @@
   &.on::after {
     opacity: 1;
   }
+
   &:after {
+    //마우스 올리면 줄생김
     content: "";
     display: block;
     height: 1px;
@@ -26,7 +28,7 @@
     position: absolute;
     left: 0;
     top: 100px;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgb(255, 255, 255, 0.25);
     opacity: 0;
     transition: all 0.25s ease 0.25s;
     pointer-events: none;
@@ -49,7 +51,7 @@
     .list {
       display: flex;
       > li {
-        // background-color: #f00;
+        //background-color: #f00;
         border-radius: 0px 0px 20px 20px;
         padding-bottom: 30px;
         &:hover {
@@ -74,8 +76,8 @@
         font-weight: 500;
         padding: 0 60px;
         position: relative;
-        // background-color: #f00;
         &::after {
+          //메뉴 눌렀을 때 밑줄 생기는거
           content: "";
           display: block;
           position: absolute;
@@ -93,8 +95,6 @@
         display: none;
         position: absolute;
         padding-left: 40px;
-        // background-color: #f00;
-
         li {
           a {
             display: flex;
