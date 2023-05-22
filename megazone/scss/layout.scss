@@ -1,0 +1,48 @@
+@import "vars";
+.header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  color: #fff;
+  .logo a {
+    position: absolute;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    /* outline: 1px solid #f00; */
+    padding-left: 50px;
+    padding-right: 50px;
+  } // 이미지 넓이 줄이는 방법써라
+
+  .gnb {
+    .list {
+      display: flex;
+      > li {
+        // background-color: #f00;
+        border-radius: 0px 0px 20px 20px;
+        padding-bottom: 30px;
+        &:hover {
+          // background-color: #f00;
+          padding-bottom: 30px;
+          .depth01:after {
+            transform: scaleX(1);
+          }
+        }
+      }
+      .depth01 {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: capitalize;
+        font-size: $h4;
+        font-weight: 500;
+        padding: 0 25px;
+        position: relative;
+        // background-color: #f00;
+      }
+    }
+  }
+}
