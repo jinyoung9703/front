@@ -66,6 +66,22 @@
     top: 100%;
   }
 }
+.tutle-box {
+  padding: 0 50px;
+  h2 {
+    font-size: $h4;
+  }
+  h3 {
+    font-size: $h2;
+    font-weight: 700;
+  }
+  a {
+    padding: 15px 30px;
+    border: 1px solid #fff;
+    margin-top: 30px;
+    display: inline;
+  }
+}
 
 .tech {
   display: grid;
@@ -124,20 +140,7 @@
       justify-content: center;
       align-items: start;
       flex-direction: column;
-      padding: 0 50px;
-      h2 {
-        font-size: $h4;
-      }
-      h3 {
-        position: relative;
-        font-size: $h2;
-        padding: 0;
-      }
-      a {
-        padding: 15px 30px;
-        border: 1px solid #fff;
-        margin-top: 30px;
-      }
+      // padding: 0 50px;
     }
     &:nth-child(2) {
       background-image: url(../images/main/sec2_bg1.jpg);
@@ -162,6 +165,110 @@
     }
     &:nth-child(7) {
       background-image: url(../images/main/sec2_bg5.jpg);
+    }
+  }
+}
+
+.Product {
+  padding: 100px 0;
+  background-color: $gray;
+  display: flex;
+  justify-content: space-between;
+  .title-box {
+    padding: 0 50px;
+    color: #111;
+
+    a {
+      border-color: #111;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    padding: 100px 50px;
+    li {
+      margin-bottom: 50px;
+      width: 50%;
+      &:nth-child(1) h3:before {
+        background-image: url(../images/main/sec3_icon1.png);
+      }
+      &:nth-child(2) h3:before {
+        background-image: url(../images/main/sec3_icon2.png);
+      }
+      &:nth-child(3) h3:before {
+        background-image: url(../images/main/sec3_icon3.png);
+      }
+      &:nth-child(4) h3:before {
+        background-image: url(../images/main/sec3_icon4.png);
+      }
+      h3 {
+        font-size: $h3;
+        margin-bottom: 20px;
+        &:before {
+          content: "";
+          display: block;
+          height: 64px;
+          width: 64px;
+          background-repeat: no-repeat;
+          background-position: 50% 0;
+          // background-image: url(../images/main/sec3_icon1.png);
+          border: 2px solid #111;
+          border-radius: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  .img-area {
+    display: flex;
+    align-items: center;
+    padding-right: 100px;
+    img:nth-child(1) {
+      margin-right: -30px;
+      position: relative;
+    }
+    img:nth-child(3) {
+      margin-left: 30px;
+    }
+  }
+}
+.media {
+  background-color: $gray;
+  padding: 100px 0;
+
+  .mask {
+    // width: 1440px;
+    padding: 50px;
+    margin: 0 auto;
+    overflow-x: hidden;
+
+    margin-top: 150px;
+  }
+  .list {
+    li {
+      width: 400px;
+      &:hover a {
+        transform: translateY(-50px);
+      }
+      a {
+        border-radius: 30px;
+        overflow: hidden;
+        display: block;
+        transition: all 0.5s ease;
+        img {
+          width: 100%;
+          height: 250px;
+          // aspect-ratio: 2 / 1;
+          vertical-align: top;
+          object-fit: cover;
+        }
+        p {
+          padding: 35px;
+          background-color: rgba(0, 0, 0, 0.25);
+        }
+      }
     }
   }
 }

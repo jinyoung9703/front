@@ -8,3 +8,10 @@ gnbList.forEach((item, idx) => {
 header.addEventListener("mouseleave", () => {
   header.classList.remove("on");
 });
+
+new Swiper(".media .mask", {
+  slidesPerView: "auto", // 보여지는 갯수 ,크기
+  centeredSlides: true,
+  spaceBetween: 20, //간격
+  loop: true,
+});
