@@ -1,46 +1,46 @@
-@charset "UTF-8";
 .header {
+  position: fixed;
   display: flex;
   justify-content: space-between;
-  position: fixed;
+  color: #fff;
   width: 100%;
   z-index: 99;
-  color: #fff;
+  transition: all 0.5s ease;
 }
-.header .logo a {
-  position: absolute;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  /* outline: 1px solid #f00; */
-  padding-left: 50px;
-  padding-right: 50px;
+.header .logo {
+  height: 80px;
+  padding: 0 50px;
 }
 .header .logo img {
-  width: 40%; /* 이미지의 폭을 조정 */
-  height: auto; /* 이미지의 높이를 자동으로 조정하여 가로 세로 비율 유지 */
+  height: 40px;
+  top: 20px;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s ease;
 }
-.header .gnb .list {
+.header .logo img.white {
+  opacity: 1;
+}
+.header.on {
+  color: #111;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.header.on .logo img.white {
+  opacity: 0;
+}
+.header.on .logo img.black {
+  opacity: 1;
+}
+
+.gnb .list {
   display: flex;
 }
-.header .gnb .list > li {
-  border-radius: 0px 0px 20px 20px;
-  padding-bottom: 30px;
-}
-.header .gnb .list > li:hover {
-  padding-bottom: 30px;
-}
-.header .gnb .list > li:hover .depth01:after {
-  transform: scaleX(1);
-}
-.header .gnb .list .depth01 {
-  height: 100px;
+.gnb .list li a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-transform: capitalize;
+  height: 80px;
+  padding: 0 40px;
   font-size: 20px;
   font-weight: 500;
-  padding: 0 25px;
-  position: relative;
 }

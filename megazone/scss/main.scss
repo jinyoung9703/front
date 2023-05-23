@@ -1,26 +1,126 @@
-.main {
-  &-visual {
-    iframe {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 1/ 0.5625;
-      object-fit: cover; //img,video에만 먹는다
+@import "vars";
+.main-visual {
+  iframe {
+    width: 100%;
+    aspect-ratio: 1 / 0.5625;
+    //height: 100vh;
+    //object-fit: cover; //img,video
+  }
+  .slogan {
+    position: absolute;
+    color: #fff;
+    font-size: $h1 * 1.25;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    line-height: 1.5;
+    font-weight: 700;
+    .word {
+      overflow: hidden;
     }
   }
 }
-.title {
-  position: absolute;
-  display: flex;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  margin: 0;
-  padding: 0;
-
-  h2 {
-    font-size: 47px;
-    line-height: 140%;
-    letter-spacing: -0.03em;
+.banner {
+  padding: 150px 0;
+  // margin-left: 300px;
+  overflow-x: hidden;
+  .mask {
+    margin-top: 120px;
+    position: relative;
+    border: 1px solid firebrick;
+    .list {
+      li {
+        width: 1160px;
+        p {
+          margin-top: 30px;
+          font-size: $h3;
+          .category {
+            padding: 10px 20px;
+            background-color: #111;
+            color: #fff;
+          }
+        }
+      }
+    }
+    button {
+      position: absolute;
+      background: none;
+      top: 40%;
+      border: 2px solid #fff;
+      border-radius: 100%;
+      width: 60px;
+      height: 60px;
+      z-index: 2;
+      cursor: pointer;
+      .material-icns {
+        font-size: 48px;
+        color: #fff;
+      }
+      &.btn-next {
+        right: 270px;
+      }
+    }
+    .pagination {
+      margin-top: 50px;
+      .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        opacity: 1;
+        border: 3px solid #111;
+        background: none;
+        border-radius: 100px;
+        transition: all 0.25s ease;
+        &-active {
+          width: 50px;
+          background-color: $main-color;
+        }
+      }
+    }
   }
 }
+.partner {
+  padding: 150px 0;
+  background-color: $bg-color;
+  overflow-x: hidden;
+  .brand {
+    margin-top: 50px;
+
+    ul {
+      // display: flex;
+      // animation: brand-motio 10s linear infinite;
+      li {
+        // padding: 20px 40px;
+        width: auto;
+        padding: 0 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+.title-box {
+  h2 {
+    font-size: $h1;
+    line-height: 1.25;
+    .mini {
+      color: $main-color;
+      display: block;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  }
+  p {
+    font-size: $h3;
+  }
+}
+
+// @keyframes brand-motion {
+//   0% {
+//     transform: translateX(0);
+//   }
+//   100% {
+//     transform: translateX(-100%);
+//   }
+// }
