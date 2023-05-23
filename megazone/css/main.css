@@ -104,3 +104,25 @@
 .title-box p {
   font-size: 24px;
 }
+
+.main-visual1 {
+  position: relative;
+}
+.main-visual1 iframe {
+  width: 100%;
+  aspect-ratio: 1/0.5625;
+}
+.main-visual1 .content-description {
+  position: absolute;
+  color: #0b7bff;
+  font-size: 20px;
+  font-weight: 700;
+  top: 10%;
+  left: 15%;
+}
+.main-visual1 .content-description .content-title {
+  margin-top: 12px;
+  font-size: 46px;
+  line-height: 140%;
+  color: #fff;
+}

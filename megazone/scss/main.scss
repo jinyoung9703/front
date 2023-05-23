@@ -21,6 +21,7 @@
     }
   }
 }
+
 .banner {
   padding: 150px 0;
   overflow-x: hidden;
@@ -112,6 +113,31 @@
   }
   p {
     font-size: $h3;
+  }
+}
+.main-visual1 {
+  position: relative;
+  iframe {
+    width: 100%;
+    aspect-ratio: 1 / 0.5625;
+    //height: 100vh;
+    //object-fit: cover; //img,video
+  }
+  .content-description {
+    position: absolute;
+    // display: flex;
+    color: $main-color;
+    font-size: 20px;
+    font-weight: 700;
+    // align-items: center;
+    top: 10%;
+    left: 15%;
+    .content-title {
+      margin-top: 12px;
+      font-size: 46px;
+      line-height: 140%;
+      color: #fff;
+    }
   }
 }
 
