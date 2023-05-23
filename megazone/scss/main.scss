@@ -23,12 +23,11 @@
 }
 .banner {
   padding: 150px 0;
-  // margin-left: 300px;
   overflow-x: hidden;
   .mask {
     margin-top: 120px;
     position: relative;
-    border: 1px solid firebrick;
+    //border: 1px solid #f00;
     .list {
       li {
         width: 1160px;
@@ -53,12 +52,12 @@
       height: 60px;
       z-index: 2;
       cursor: pointer;
-      .material-icns {
+      .material-icons {
         font-size: 48px;
         color: #fff;
       }
       &.btn-next {
-        right: 270px;
+        right: 270px; // 1430 - 1160
       }
     }
     .pagination {
@@ -67,7 +66,7 @@
         width: 12px;
         height: 12px;
         opacity: 1;
-        border: 3px solid #111;
+        border: 3px solid $main-color;
         background: none;
         border-radius: 100px;
         transition: all 0.25s ease;
@@ -85,12 +84,12 @@
   overflow-x: hidden;
   .brand {
     margin-top: 50px;
-
     ul {
-      // display: flex;
-      // animation: brand-motio 10s linear infinite;
+      //display: flex;
+      //animation: brand-motion 10s linear infinite;
+      transition-timing-function: linear;
       li {
-        // padding: 20px 40px;
+        //padding: 20px 40px;
         width: auto;
         padding: 0 40px;
         display: flex;
@@ -121,6 +120,6 @@
 //     transform: translateX(0);
 //   }
 //   100% {
-//     transform: translateX(-100%);
+//     transform: translateX(-50%);
 //   }
 // }

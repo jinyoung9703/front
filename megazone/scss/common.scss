@@ -1,6 +1,6 @@
 @import "vars";
 body {
-  font-size: 20px;
+  font-size: 16px;
   color: #111;
   font-family: "Raleway", "Noto Sans KR", "돋움";
   font-weight: 400;
@@ -12,12 +12,15 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
+.container {
+  width: 1430px;
+  margin: 0 auto;
+  position: relative;
+}
 h2 {
-  font-size: 20px;
+  font-size: 36px;
   font-weight: 700;
-  margin-bottom: 20px;
-  padding: 0;
+  margin-bottom: 50px;
 }
 strong {
   font-weight: 700;
