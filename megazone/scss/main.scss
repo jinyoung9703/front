@@ -1,4 +1,5 @@
 @import "vars";
+@import "mixins";
 .main-visual {
   iframe {
     width: 100%;
@@ -100,6 +101,151 @@
     }
   }
 }
+
+.effect {
+  // background-color: rgb(2, 146, 134);
+  // refactoring
+  padding: 150px 0px;
+  position: relative;
+  color: #fff;
+  .panel {
+    ul {
+      display: flex;
+      justify-content: space-between;
+      li {
+        width: 24%;
+        // border: 1px solid #fff;
+        a:hover {
+          img {
+            transform: scale(1.25);
+          }
+        }
+        .img-box {
+          overflow: hidden;
+        }
+        img {
+          width: 100%;
+          vertical-align: top; // 효과같은거 주루때 가끔 딸깍거리는 현상이 발생하면
+          transition: all 0.25s ease;
+          aspect-ratio: 1 / 1.5;
+        }
+      }
+    }
+  }
+  .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    aspect-ratio: 1 / 0.5625;
+    z-index: -1;
+  }
+}
+
+.news {
+  // width: 100%;
+  padding: 150px 0px;
+  .title-box {
+    display: flex;
+    align-items: end;
+    h2 {
+      margin-bottom: 0;
+    }
+    .detail {
+      margin-left: 50px;
+      font-size: $h4;
+    }
+  }
+  .panel {
+    margin-top: 50px;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      gap: 0 20px;
+      //margin과 gap의 차이는 좌우 인접 요소가 있을때 gap이 생긴다
+      //margin은 일단 전부 만든다
+      li {
+        width: 33.33%;
+        .img-box {
+          img {
+            width: 100%;
+          }
+        }
+        .txt-box {
+          h3 {
+            margin: 20px 0 30px;
+            font-size: $h3;
+            // white-space: nowrap;
+            // overflow: hidden;
+            // // width: 400px;
+            @include ellipsis();
+          }
+          p {
+            @include multiEllipsis();
+            // @include multiEllipsis();
+            // line-height: 1.5;
+            // height: 4.5em; //em단위는 부모의 글자크기를 기준으로 한다. 만약 글자크기가 10px 이면 45px이다
+            // overflow: hidden;
+            // display: -webkit-box;
+            // -webkit-line-clamp: 3;
+            // -webkit-box-orient: vertical;
+            // text-overflow: ellipsis;
+            // // border: 1px solid #f00;
+          }
+        }
+      }
+    }
+  }
+}
+
+.recruit {
+  color: #fff;
+  padding: 150px 0;
+  background-image: url("../images/main/background.png");
+  .txt-box {
+    font-size: $h1 * 1.5;
+    font-weight: 900;
+    line-height: 1.5;
+    .rolling {
+      width: 450px;
+      height: 120px;
+      overflow: hidden;
+      display: inline-block;
+      text-align: center;
+      color: $main-color;
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 10px;
+        background-color: #fff;
+        position: absolute;
+        bottom: 0px;
+      }
+    }
+  }
+  .more {
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $h4;
+    font-weight: 700;
+    background-color: $main-color;
+    @include longShadow(40, darken($main-color, 15));
+    overflow: hidden;
+  }
+}
+
+.vertical {
+  padding-bottom: 300px;
+  img {
+    border: 1px solid #f00;
+  }
+}
+
 .title-box {
   h2 {
     font-size: $h1;
@@ -114,32 +260,40 @@
   p {
     font-size: $h3;
   }
-}
-.main-visual1 {
-  position: relative;
-  iframe {
-    width: 100%;
-    aspect-ratio: 1 / 0.5625;
-    //height: 100vh;
-    //object-fit: cover; //img,video
-  }
-  .content-description {
-    position: absolute;
-    // display: flex;
-    color: $main-color;
-    font-size: 20px;
-    font-weight: 700;
-    // align-items: center;
-    top: 10%;
-    left: 15%;
-    .content-title {
-      margin-top: 12px;
-      font-size: 46px;
-      line-height: 140%;
-      color: #fff;
+  .detail {
+    .material-icons {
+      vertical-align: middle;
+      margin-left: 10px;
+      margin-bottom: 6px;
     }
   }
 }
+
+// .main-visual1 {
+//   position: relative; 부모가 포지션을 가져야 위치 기준으로 움직인다
+//   iframe {
+//     width: 100%;
+//     aspect-ratio: 1 / 0.5625;
+//     //height: 100vh;
+//     //object-fit: cover; //img,video
+//   }
+//   .content-description {
+//     position: absolute;
+//     // display: flex;
+//     color: $main-color;
+//     font-size: 20px;
+//     font-weight: 700;
+//     // align-items: center;
+//     top: 10%;
+//     left: 15%;
+//     .content-title {
+//       margin-top: 12px;
+//       font-size: 46px;
+//       line-height: 140%;
+//       color: #fff;
+//     }
+//   }
+// }
 
 // @keyframes brand-motion {
 //   0% {
