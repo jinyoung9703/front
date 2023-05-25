@@ -1,4 +1,5 @@
 @import "vars";
+@import "mixins";
 
 .header {
   position: fixed;
@@ -52,6 +53,104 @@
         font-weight: 500;
         //box-sizing: border-box;
       }
+    }
+  }
+}
+
+footer {
+  background-color: #111;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 150px 0;
+  .upper {
+    display: flex;
+    // align-items: start;
+    .menu-box {
+      width: 50%;
+      .list {
+        display: flex;
+        flex-wrap: wrap; // 둘러싼다,덮는다
+        > li {
+          width: 50%;
+          margin-bottom: 50px;
+          &:nth-child(1) {
+            order: 1;
+          }
+          &:nth-child(2) {
+            order: 3;
+          }
+          &:nth-child(3) {
+            order: 2;
+          }
+          &:nth-child(4) {
+            order: 4;
+          }
+          &:nth-child(5) {
+            order: 5;
+          }
+        }
+        .depth01 {
+          font-size: $h3;
+          font-weight: 700;
+          &:after {
+            @include icon("\f1df");
+            display: inline-block;
+            margin-left: 20px;
+          }
+        }
+        .depth02 {
+          margin-top: 20px;
+          li {
+            a {
+              padding: 10px 0;
+              font-size: $h4;
+
+              display: block;
+              //inline들 a,span,strong,em,input위아래 안먹음, 좌우는 잘됨 넓이 높이 설정 못함
+            }
+          }
+        }
+      }
+    }
+    .inquiry {
+      position: relative;
+      background-color: #222;
+      // width: 50%;
+      flex-grow: 1; //여백을 나눠 가져간다
+      padding: 80px;
+      font-size: $h4;
+      .main {
+        font-size: $h2;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .more {
+        position: absolute;
+        right: 80px;
+        bottom: 80px;
+      }
+    }
+  }
+  .lower {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding-top: 100px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    address {
+      font-family: "Noto sans KR";
+      .info-box {
+        display: flex;
+        margin: 10px 0;
+      }
+      dl {
+        display: flex;
+        margin-right: 20px;
+        align-items: center; //센터 맞춤
+      }
+    }
+    .copyright {
+      font-size: 14px;
     }
   }
 }

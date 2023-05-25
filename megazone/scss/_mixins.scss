@@ -27,3 +27,7 @@
   $shadow: unquote($shadow); //""제거함
   text-shadow: $shadow;
 }
+@mixin icon($code) {
+  font-family: "Material Icons";
+  content: $code;
+}
