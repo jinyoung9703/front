@@ -24,7 +24,7 @@
     $shadow: $shadow + $i + "px " + $i + "px 0px " + $shadowColor + ",";
   }
   $shadow: $shadow + $limit + "px " + $limit + "px 0px " + $shadowColor;
-  $shadow: unquote($shadow); //""제거함
+  $shadow: unquote($shadow); //""제거합니다
   text-shadow: $shadow;
 }
 @mixin icon($code) {
