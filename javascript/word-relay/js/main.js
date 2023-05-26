@@ -42,8 +42,19 @@ word.addEventListener("keyup", (e) => {
       return;
     }
 
-    appedWord(word.value);
-    word.value = "";
+    fetch(`https://opendict.korean.go.kr/api/search?key=15744A2092FFCF5672EB518AD366C9EB&q=${word.value}&req_type=json`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.channel.total <= 0) {
+          //console.log(data);
+          //console.log(data.channel.total); //0이명 등재되지 않은...
+          fault();
+          word.value = "";
+        } else {
+          appedWord(word.value);
+          word.value = "";
+        }
+      });
   }
 });
 
@@ -51,12 +62,13 @@ word.addEventListener("keyup", (e) => {
 
 //배열을 하나 만든다.
 //배열에 중복을 따져서 값을 입력한다.
-
-fetch("https://stdict.korean.go.kr/api/search.do?key=EBBB3CE165683929D791C1FC07BCECC7&q=기러기&req_type=json")
-  .then((response) => {
-    //   console.log(response);
-    response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  });
+// 약속 ? 필수 key ,q
+const checkDic = (question) => {
+  fetch(`https://opendict.korean.go.kr/api/search?key=15744A2092FFCF5672EB518AD366C9EB&q=${question}&req_type=json`)
+    .then((response) => response.json())
+    .then((data) => {
+      //console.log(data);
+      //console.log(data.channel.total); //0이명 등재되지 않은...
+      return data.channel.total;
+    });
+};
