@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <label for=""><span>AGE</span><input type="text" class="user-age" name="userAGE" /></label>
+      <button class="btn-adult">성인인증</button>
+    </form>
+    <script>
+      const btnAdult = document.querySelector(".btn-adult");
+      const userAge = document.querySelector(".user-age");
+      btnAdult.addEventListener("click", (e) => {
+        //"20" ParseInt() 문자를 숫자로 인식하게 바꿔줌
+        const age = parseInt(userAge.value);
+        if (age > 20) {
+          e.preventDefault();
+          console.log(age + 10);
+          alert("성인인증");
+          location.href = "http://www.daum.net";
+        } else {
+          alert("어린이");
+        }
+      });
+    </script>
+  </body>
+</html>

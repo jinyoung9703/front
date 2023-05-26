@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="login-process.html">
+      <div><label>아이디</label><input type="text" class="user-id" name="userID" /></div>
+      <div><label>패스워드</label><input type="password" class="user-pw" name="userPw" /></div>
+
+      <div>
+        <button class="btn-login" type="submit">로그인</button>
+      </div>
+    </form>
+    <script>
+      const btnLogin = document.querySelector(".btn-login");
+      const userID = document.querySelector(".user-id");
+      const userPw = document.querySelector(".user-pw");
+      btnLogin.addEventListener("click", (e) => {
+        // console.log(e);
+        e.preventDefault();
+        if (userID.value === "java" && userPw.value === "1234") {
+          alert("로그인 성공");
+          location.href = "http://www.naver.com";
+        }
+      });
+    </script>
+  </body>
+</html>
