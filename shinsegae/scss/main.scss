@@ -1,0 +1,6 @@
+@for $i from 1 through 3 {
+  // 보간(interpolation)
+  &.visual#{$i} .img {
+    background-image: url("../images/main/20230527-305_visual_main#{$i}.png");
+  }
+}
