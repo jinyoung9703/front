@@ -41,7 +41,7 @@ const makeChart = (cities, values) => {
   const ctx = document.querySelector(".chart");
   if (myChart !== null) myChart.destroy();
   myChart = new Chart(ctx, {
-    type: "bar",
+    type: "doughnut",
     data: {
       labels: cities,
       datasets: [
