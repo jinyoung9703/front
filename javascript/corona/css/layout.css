@@ -25,10 +25,10 @@ body {
   justify-content: end;
   margin-bottom: 100px;
 }
-.coronaList .date-box .dete-picker {
-  height: 50px;
+.coronaList .date-box .date-picker {
+  height: 40px;
   padding: 0 20px;
-  font-size: 30px;
+  font-size: 18px;
 }
 .coronaList ul {
   display: flex;
