@@ -1,140 +1,33 @@
-// ajax (asynchronous javascript and xml)
-// setTimeout(() => {
-//   console.log("03");
-// }, 0);
-// console.log("01");
-// console.log("02");
-// console.log("04");
-//비동기 예시.
-
-const search = document.querySelector(".search");
-search.addEventListener("keyup", (e) => {
-  if (e.key === "Enter" || e.keyCode === 13) {
-    const searchWord = search.value; //전지현
-    searchImg(searchWord);
-  }
+const coronaList = document.querySelector(".coronaList ul");
+const loadCoronaData = async (date) => {
+  const corona = await fetch(
+    `http://apis.data.go.kr/1352000/ODMS_COVID_04/callCovid04Api?serviceKey=hU7ZBPI%2Fu3dbFIRLZU3JIGjCM0cxCCyUyVGhXV8tpmoQdA692smC3%2FX0s0fkAR0OKZAoWTmc%2FeIY3T4V02XpZg%3D%3D&pageNo=1&numOfRows=500&apiType=JSON&std_day=${date}`
+  );
+  const response = await corona.json();
+  //.then((response) => response.json())
+  const items = response.items;
+  // console.log(data);
+  items.forEach((item, idx) => {
+    console.log(item.gubun + "===" + item.incDec);
+    const li = document.createElement("li");
+    const region = document.createElement("span");
+    region.classList.add("region");
+    const incDec = document.createElement("span");
+    incDec.classList.add("incDec");
+    region.textContent = item.gubun; //글자한글
+    incDec.textContent = item.incDec; //숫자
+    li.append(region);
+    li.append(incDec);
+    coronaList.append(li);
+  });
+};
+const datepicker = new Lightpick({
+  field: document.querySelector(".dete-picker"),
+  format: "YYYY-MM-DD",
+  onSelect: function (date) {
+    //console.log(date.format("YYYY-MM-DD"));
+    loadCoronaData(date.format("YYYY-MM-DD"));
+  },
 });
-
-//promise 홍대역 8번출구 맥도날드() fullfield 약속이 이행되면 / rejected 약속이 지켜지지 않음
-
-// const searchImg = (searchWord) => {
-//   const aa = fetch(`https://dapi.kakao.com/v2/search/image?query=${searchWord}`, {
-//     headers: {
-//       Authorization: "KakaoAK 5d7246f1af7602008f2529298ebdf6b5",
-//     },
-//   })
-//     .then((response) => response.json())
-//     .then((data) => {
-//       // console.log(data.meta.is_end);
-//       console.log(data);
-//       const imgList = data.documents;
-//       imgList.forEach(function (item, idx) {
-//         const li = document.createElement("li");
-//         const img = document.createElement("img");
-//         img.src = item.thumbnail_url;
-//         li.append(img);
-//         thumbsList.append(li);
-//       });
-//     });
-//   console.log(aa);
-// };
-
-// 이미지
-
-const imgbt = document.querySelector(".imgbt");
-const video = document.querySelector(".video");
-const thumbsList = document.querySelector(".thumbs-box ul");
-
-imgbt.addEventListener("click", function () {
-  const removeItem = () => {
-    const imgItem = document.querySelectorAll(".thumbs-box ul li");
-    imgItem.forEach((item, idx) => {
-      item.remove();
-    });
-  };
-
-  const searchImg = async (searchWord) => {
-    removeItem();
-
-    const imgResponse = await fetch(`https://dapi.kakao.com/v2/search/image?query=${searchWord}`, {
-      headers: {
-        Authorization: "KakaoAK 5d7246f1af7602008f2529298ebdf6b5",
-      },
-    });
-
-    const imgJson = await imgResponse.json();
-    const imgList = imgJson.documents;
-
-    imgList.forEach(function (item, idx) {
-      const li = document.createElement("li");
-      const img = document.createElement("img");
-      const a = document.createElement("a");
-
-      img.src = item.thumbnail_url;
-      a.href = item.image_url;
-      a.setAttribute("data-fancybox", "gallery");
-      a.append(img);
-      li.append(a);
-      thumbsList.append(li);
-    });
-
-    gsap.from(".thumbsList li", { scale: 0, duration: 1, stagger: 0.02 });
-
-    Fancybox.bind("[data-fancybox]", {
-      // 필요한 옵션 설정
-    });
-  };
-
-  searchImg(`https://dapi.kakao.com/v2/search/image?query=${searchWord}`); // 검색어를 원하는 키워드로 변경해주세요
-  alert("딸깍");
-});
-
-video.addEventListener("click", function () {
-  const removeItem = () => {
-    const imgItem = document.querySelectorAll(".thumbs-box ul li");
-    imgItem.forEach((item, idx) => {
-      item.remove();
-    });
-  };
-
-  const searchVideo = async (searchWord) => {
-    removeItem();
-
-    const imgResponse = await fetch(`https://dapi.kakao.com/v2/search/vclip?query=${searchWord}&size=30`, {
-      headers: {
-        Authorization: "KakaoAK 5d7246f1af7602008f2529298ebdf6b5",
-      },
-    });
-
-    const imgJson = await imgResponse.json();
-    const imgList = imgJson.documents;
-
-    imgList.forEach(function (item, idx) {
-      const li = document.createElement("li");
-      const img = document.createElement("img");
-      const a = document.createElement("a");
-
-      img.src = item.thumbnail;
-      a.href = item.url;
-      a.setAttribute("data-fancybox", "gallery");
-      a.append(img);
-      li.append(a);
-      thumbsList.append(li);
-    });
-
-    gsap.from(".thumbsList li", { scale: 0, duration: 1, stagger: 0.02 });
-
-    Fancybox.bind("[data-fancybox]", {
-      // 필요한 옵션 설정
-    });
-  };
-
-  const thumbsList = prompt("검색어를 입력하세요"); // 검색어 입력 받기
-
-  if (searchInput) {
-    searchVideo(searchInput);
-    alert("딸깍");
-  } else {
-    alert("검색어를 입력하지 않았습니다.");
-  }
-});
+datepicker.setDate(new Date());
+// loadCoronaData("2023-05-30");
