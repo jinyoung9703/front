@@ -20,17 +20,18 @@ const overlay = new kakao.maps.CustomOverlay({
   //map: map,
   //position: marker.getPosition(),
 });
-const searchChargePlace = async (place) => {
+
+const searchcampingPlace = async (place) => {
   clusterer.clear();
-  const charge = await fetch(
-    `http://api.odcloud.kr/api/EvInfoServiceV2/v1/getEvSearchList?page=1&perPage=500&cond%5Baddr%3A%3ALIKE%5D=${place}&serviceKey=hU7ZBPI%2Fu3dbFIRLZU3JIGjCM0cxCCyUyVGhXV8tpmoQdA692smC3%2FX0s0fkAR0OKZAoWTmc%2FeIY3T4V02XpZg%3D%3D`
+  const camping = await fetch(
+    `https://apis.data.go.kr/B551011/GoCamping/searchList?numOfRows=1&pageNo=30&MobileOS=WIN&MobileApp=FAA&serviceKey=hU7ZBPI%2Fu3dbFIRLZU3JIGjCM0cxCCyUyVGhXV8tpmoQdA692smC3%2FX0s0fkAR0OKZAoWTmc%2FeIY3T4V02XpZg%3D%3D&_type=json&keyword=캠핑장`
   );
-  console.log(charge);
-  const response = await charge.json();
-  const evchargeList = response.data;
+  console.log(camping);
+  const response = await camping.json();
+  const campingList = response.data;
   const markers = [];
-  console.log(evchargeList);
-  evchargeList.forEach((item, idx) => {
+  console.log(campingList);
+  campingList.forEach((item, idx) => {
     const marker = new kakao.maps.Marker({
       map: map,
       position: new kakao.maps.LatLng(item.lat, item.longi),
@@ -44,13 +45,13 @@ const searchChargePlace = async (place) => {
         `<div class="wrap">
         <div class="info">
             <div class="title">
-                ${item.csNm}
+                ${item.facltNm}
                 <div class="close" onclick="closeOverlay()" title="닫기"></div>
             </div>
             <div class="body">
                 <div class="desc">
-                    <div class="ellipsis">${item.addr}</div>
-                    <div class="type ellipsis">${item.cpNm}</div>
+                    <div class="ellipsis">${item.addr1}</div>
+                    <div class="type ellipsis">${item.operDeCl}</div>
                 </div>
             </div>
         </div>
@@ -70,7 +71,7 @@ const search = document.querySelector(".search");
 search.addEventListener("keyup", (e) => {
   console.log(e);
   if (e.key === "Enter" || e.keyCode === 13) {
-    searchChargePlace(search.value);
+    searchcampingPlace(search.value);
   }
 });
 function closeOverlay() {
